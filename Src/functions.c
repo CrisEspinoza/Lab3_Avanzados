@@ -7,10 +7,15 @@
 
 // ****************** Funcion principal ******************//
 
-void goloso(List* listNodos)
+void goloso(List* listNodos, char nombre[])
 {
     FILE *txt;  // Incialzamos una variable de tipo FILE para poder trabajar con los archivos
-    txt = fopen("../Out/Salida.out", "wt");
+
+    char* route = (char*)calloc(100, sizeof(char));
+    strcat(route, "../Out/");
+	strcat(route, nombre);
+    strcat(route, ".out");
+    txt = fopen(route, "wt");
 
     int sumTotal, auxSum, indexOrigin ,indexDestination, flag = 0 ,counter = listNodos->numberCollectionCenter,i,j;
     float x,auxCost;
