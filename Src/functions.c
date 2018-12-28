@@ -50,6 +50,10 @@ void goloso(List* listNodos)
                                 //printf("EL resultado es: %f \n", auxCost);
                             }
                         }
+                        if (j == (listNodos->numberCollectionCenter - 1) )
+                            printCurrent(listNodos,i,j,auxCost,1);
+                        else
+                            printCurrent(listNodos,i,j,auxCost,0);
                     }
                 }
             }

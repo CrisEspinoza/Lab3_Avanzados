@@ -23,8 +23,8 @@ typedef struct List
 List* loadListNodo (char nombre[]);
 List* createListNodo(int numberCollectionCenter, int numberCollectionAvailable , int govermentMoney , List* listNodo);
 void goloso(List* listNodos);
-void printCurrent();
 void printListNodo (List* listNodo);
 void freeMemory(List* listNodo);
+void printCurrent(List* listNodo, int indexOrigin, int indexDestination, float cost, int aux);
 
 # endif

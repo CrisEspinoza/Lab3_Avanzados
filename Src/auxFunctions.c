@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "../Include/struct.h"
 
-//#define DEBUG
+#define DEBUG
 
 // **************** Funciones auxiliares ******************
 
@@ -13,15 +13,25 @@ Entrada: Recibe la matriz que se utiliza actualmente.
 Procedimiento: Se encarga de ir imprimiendo cada uno de los caminos generados y su respectivo costo de viaje.
 Salida: -.
 */
-void printCurrent()
+void printCurrent(List* listNodo, int indexOrigin, int indexDestination, float cost,int aux)
 {
     #ifdef DEBUG
     printf("\n");
-    printf("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
-    printf("| Beneficio antiguo: %d  | | Beneficio nuevo: %d | \n",investments->maxUtility.utility,investmentsAux.utility);
-    printf("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
+    printf("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
+    printf("| Distancia a la ciudad | | Distancia a la ciudad  || Costo de translado | \n");
+    printf("|         %d             -            %d            :          %f        | \n", listNodo->nodo[indexOrigin].distanceOrigin, listNodo->nodo[indexDestination].distanceOrigin, cost);
+    printf("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
     printf("\n");
     printf("Presione una tecla para continuar ... .. . \n");
+    printf("\n");
+    if (aux == 1)
+    {
+        printf("|************************************************************************|\n");
+        printf("|                                                                        |\n");
+        printf("|                       Pasando a otro nodo                              |\n");
+        printf("|                                                                        |\n");
+        printf("|************************************************************************|\n");
+    }
     while(getchar() != '\n')
     {
         printf("Tecla errónea...\n");
